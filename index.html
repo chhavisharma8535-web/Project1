@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Full Stack Developer Portfolio</title>
+    <style>
+        /* Type selector for body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            background-color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ID selector for name */
+        #my-name {
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .intro-title {
+            font-size: 1.2em;
+            color: #ecf0f1;
+            margin-top: 10px;
+        }
+
+        /* Navigation styling */
+        nav {
+            background-color: #34495e;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 18px;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+            border-bottom-color: #f39c12;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Section styling */
+        section {
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #2980b9;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+        }
+
+        section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Class selector for skill list */
+        .skill-list {
+            list-style-position: inside;
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .skill-list li {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #2980b9;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: white;
+        }
+
+        table tbody tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        /* Video/iframe styling */
+        .video-container {
+            position: relative;
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+            border: none;
+            border-radius: 6px;
+        }
+
+        /* Form styling */
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #2c3e50;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2980b9;
+            background-color: #ecf0f1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2471a3;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="my-name">Alex Chen</h1>
+        <p class="intro-title">Full Stack Developer | Web Designer | Tech Enthusiast</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate full-stack developer with 5+ years of experience building web applications and digital solutions. I specialize in creating clean, semantic, and user-friendly interfaces combined with robust backend systems. My mission is to transform ideas into elegant, functional web experiences.</p>
+            <p>I believe in continuous learning and staying updated with the latest web technologies. When I'm not coding, you'll find me contributing to open-source projects or writing technical blogs.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <ul class="skill-list">
+                <li>HTML5 & Semantic Markup</li>
+                <li>CSS3 & Responsive Design</li>
+                <li>JavaScript (Vanilla & Frameworks)</li>
+                <li>React & Vue.js</li>
+                <li>Node.js & Express</li>
+                <li>Python & Django</li>
+                <li>Database Design (SQL & NoSQL)</li>
+                <li>Web Performance Optimization</li>
+                <li>RESTful API Development</li>
+                <li>Git & Version Control</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Recent Projects</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Technologies</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>E-Commerce Platform</td>
+                        <td>Full-featured online store with payment integration</td>
+                        <td>React, Node.js, MongoDB</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Project Management Tool</td>
+                        <td>Collaborative task management application</td>
+                        <td>Vue.js, Laravel, MySQL</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics Dashboard</td>
+                        <td>Real-time data visualization platform</td>
+                        <td>Python, Flask, PostgreSQL</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media App</td>
+                        <td>Network platform with messaging and notifications</td>
+                        <td>JavaScript, Express, Firebase</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="demo">
+            <h2>Demo & Inspiration</h2>
+            <p>Watch a quick introduction to modern web development best practices:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/BsDoLVMnmZs" title="Web Development Tutorial"></iframe>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'd love to hear from you! Whether you have a project in mind or just want to chat about web development, feel free to reach out.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alex Chen. All rights reserved. | Portfolio built with semantic HTML & CSS</p>
+    </footer>
+</body>
+</html>
